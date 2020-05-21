@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(47, 45, 45);
+    color: white;
+}
+
+.navbar {
+    border-bottom: 2px solid white;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.navbar__logo {
+    padding: 10px;
+}
+
+div.navbar__logo i:hover {
+    color: greenyellow
+}
+
+.navbar__nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__nav ul li {
+    padding-top: 20px;
+    border-top: 4px solid rgb(47, 45, 45);
+    min-width: 100px;
+    text-align: center;
+    cursor: pointer
+}
+
+.navbar__nav ul li:hover {
+    color: greenyellow;
+    border-top: 4px solid greenyellow;
+}
+
+.navbar__nav ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar__hamburger {
+    min-width: 68px;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+}
+
+.navbar__hamburger_item {
+    visibility: hidden;
+    position: absolute;
+    width: 45px;
+    background-color: white;
+    height: 1px;
+    border: 1px solid white;
+    border-radius: 100px;
+    top: 18px;
+    transition: all .3s ease-in;
+}
+.navbar__hamburger_item:nth-child(2) {
+    top: 33px;
+}
+
+.navbar__hamburger_item:nth-child(3) {
+    top: 48px;
+}
+
+/* content */
+
+.content {
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    padding-top: 30vh;
+    transition: opacity .5s linear;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.wrapper404 {
+    width: 300px;
+    height: 150px;
+    margin: 30vh auto;
+
+    border: 2px solid white;
+    color: white;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+
+    text-align: center;
+}
+
+.icon--warning {
+    display: inline;
+
+    margin: auto;
+    padding: 5px 12px;
+
+    border: 2px solid white;
+    border-radius: 50%;
+
+}
+
+@media (max-width: 500px) {
+
+/* hamburger visible */
+    .navbar__hamburger {
+        z-index: 10;
+    }
+
+    .navbar__hamburger_item {
+        visibility: visible;
+    }
+
+/* Navbar on */
+    div.navbar__nav {
+        position: absolute;
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+        right: 0px;
+        top: 0px;
+    }
+
+    div.navbar__nav ul{
+        overflow: hidden;
+        box-sizing: border-box;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 400px;
+        height: 400px;
+        transform: translateY(-200px);
+        clip-path: circle(0%);
+        background-color: gray;
+        padding-top: 200px;
+        transition: all .3s ease-in;
+    }
+
+    div.navbar__nav ul.open {
+        clip-path: circle(50%);
+    }
+
+    div.navbar__nav ul li {
+        padding-top: 0;
+        text-align: left;
+        color: rgb(47, 45, 45);
+        border: none;
+        font-weight: 600;
+    }
+
+    div.navbar__nav ul li:hover {
+        color: white;
+        font-weight: 600;
+        border: none;
+    }
+
+    div.navbar__nav ul li:nth-child(1) {
+        margin-left: 20px;
+    }
+
+    div.navbar__nav ul li:nth-child(2) {
+        padding-top: 10px;
+        margin-left: 55px;
+    }
+
+    div.navbar__nav ul li:nth-child(3) {
+        margin-left: 130px;
+    }
+
+    /* hamburger menu on */
+
+    .navbar__hamburger_item.cross:nth-child(1) {
+        border-color: rgb(47, 45, 45);
+        background-color: rgb(47, 45, 45);
+        top: 33px;
+        transform: rotate(45deg)
+    }
+
+    .navbar__hamburger_item.cross:nth-child(2) {
+        transform: translateX(-45px);
+        opacity: 0
+    }
+    
+    .navbar__hamburger_item.cross:nth-child(3) {
+        border-color: rgb(47, 45, 45);
+        background-color: rgb(47, 45, 45);
+        top: 33px;
+        transform: rotate(-45deg)
+    }
+
+
+}
