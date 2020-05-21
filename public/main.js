@@ -16,12 +16,11 @@ const content = document.querySelector('.content')
 
 function fetching(url) {
     let address = window.location.href + url + '.html';
-    console.log(content.classList)
     content.classList.add('hidden');
     setTimeout(() => {
         fetch(address)
             .then(response => response.text())
             .then(html => content.innerHTML = html);
-        content.classList.toggle('hidden');
+        setTimeout(() => { content.classList.remove('hidden') }, 200);
     }, 500);
 }

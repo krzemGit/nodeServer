@@ -23,16 +23,20 @@ div.navbar__logo i:hover {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    width: 300px;
+    width: 500px;
     margin: 0;
     padding: 0;
 }
 
 .navbar__nav ul li {
     padding-top: 20px;
+
     border-top: 4px solid rgb(47, 45, 45);
     min-width: 100px;
+
     text-align: center;
+    font-size: 20px;
+
     cursor: pointer
 }
 
@@ -87,6 +91,7 @@ div.navbar__logo i:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
 }
 
 .hidden {
